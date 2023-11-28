@@ -1,6 +1,5 @@
 import random
 from typing import List
-
 from hangman import words
 
 def choose_word() -> str:
@@ -8,7 +7,13 @@ def choose_word() -> str:
     return random.choice(word_list)
 
 def display_word(secret_word: str, guessed_letters: List[str]) -> str:
-    pass  # TODO: Implement a function to display the word with underscores for unguessed letters
+    displayed_word = ""
+    for letter in secret_word:
+        if letter in guessed_letters:
+            displayed_word += letter + " "
+        else:
+            displayed_word += "_ "
+    return displayed_word.strip()
 
 def take_guess() -> str:
     pass  # TODO: Implement a function to take a user's guess
