@@ -16,7 +16,13 @@ def display_word(secret_word: str, guessed_letters: List[str]) -> str:
     return displayed_word.strip()
 
 def take_guess() -> str:
-    pass  # TODO: Implement a function to take a user's guess
+    while True:
+        guess = input("Enter your guess (a single lowercase letter): ").lower()
+        if len(guess) == 1 and guess.isalpha():
+            return guess
+        else:
+            print("Invalid input. Please enter a single lowercase letter.")
+
 
 def hangman():
     secret_word = choose_word()
