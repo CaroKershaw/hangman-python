@@ -2,9 +2,13 @@ import random
 from typing import List
 from hangman import words
 
+
 def choose_word() -> str:
-    word_list = words.get_word_list()  # TODO Check the words module was imported correctly
+    word_list = (
+        words.get_word_list()
+    )  # TODO Check the words module was imported correctly
     return random.choice(word_list)
+
 
 def display_word(secret_word: str, guessed_letters: List[str]) -> str:
     displayed_word = ""
@@ -14,6 +18,7 @@ def display_word(secret_word: str, guessed_letters: List[str]) -> str:
         else:
             displayed_word += "_ "
     return displayed_word.strip()
+
 
 def take_guess() -> str:
     while True:
@@ -56,6 +61,7 @@ def hangman():
 
     else:
         print(f"Sorry, you're out of attempts. The word was {secret_word}.")
+
 
 if __name__ == "__main__":
     hangman()
