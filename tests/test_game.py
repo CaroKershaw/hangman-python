@@ -2,6 +2,7 @@ import unittest
 from unittest.mock import patch
 from hangman.game import choose_word, display_word, take_guess, hangman
 
+
 class TestGame(unittest.TestCase):
     def test_choose_word(self):
         # Test that choose_word returns a non-empty string
@@ -14,7 +15,11 @@ class TestGame(unittest.TestCase):
         secret_word = "python"
         guessed_letters = ["p", "t"]
         displayed = display_word(secret_word, guessed_letters)
-        self.assertEqual(displayed, "p _ t _ _ _", "Displayed word should show guessed letters and underscores.")
+        self.assertEqual(
+            displayed,
+            "p _ t _ _ _",
+            "Displayed word should show guessed letters and underscores.",
+        )
 
     @patch("builtins.input", side_effect=["a"])
     def test_take_guess_valid_entry(self, mock_input):
@@ -23,7 +28,7 @@ class TestGame(unittest.TestCase):
         self.assertIsInstance(guess, str, "Guess should be a single lowercase letter.")
         self.assertTrue(guess.isalpha(), "Guess should be a single lowercase letter.")
         self.assertEqual(len(guess), 1, "Guess should be a single lowercase letter.")
-        
+
     @patch("builtins.input", side_effect=["1"])
     def test_take_guess_invalid_entry(self, mock_input):
         # TODO: Add test that take_guess rejects invalid input

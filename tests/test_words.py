@@ -1,6 +1,7 @@
 import unittest
 from hangman.words import get_word_list
 
+
 class TestWords(unittest.TestCase):
     def test_get_word_list(self):
         # Test that get_word_list returns a non-empty list of words
