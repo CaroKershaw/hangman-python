@@ -16,25 +16,25 @@ The project is organized into the following parts:
 
 ## Installation
 
-# Clone the repository to your local machine:
+## Clone the repository to your local machine:
 git clone <repository_url>
 Navigate to the project directory:
 cd hangman-python
 install project dependencies
 
-# Usage:
+## Usage:
 
-# Run the Hangman Game
+## Run the Hangman Game
 To play the Hangman game, run the following command:
 python -m hangman.game
 Follow the on-screen instructions to guess the word.
 
-# Run Unit Tests
+## Run Unit Tests
 To run unit tests for the project, use the following command:
 python -m unittest discover tests
 This will execute all unit tests and report the results.
 
-# Contributing
+## Contributing
 If you would like to contribute to the development of this project, please follow these steps:
 Fork the repository.
 Create a new branch for your feature or bug fix.
@@ -42,5 +42,5 @@ Implement your changes.
 Run the unit tests to ensure that your changes do not introduce new issues.
 Create a pull request to submit your changes.
 
-# License
+## License
 This project is licensed under the MIT License.
